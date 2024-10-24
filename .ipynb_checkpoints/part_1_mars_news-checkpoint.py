@@ -11,15 +11,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Import Splinter and BeautifulSoup with an alias\n",
+    "# Import Splinter and BeautifulSoup\n",
     "from splinter import Browser\n",
-    "from bs4 import BeautifulSoup as soup  # Added alias 'soup'\n",
-    "from webdriver_manager.chrome import ChromeDriverManager\n",
-    "import time"
+    "from bs4 import BeautifulSoup"
    ]
   },
   {
@@ -47,7 +45,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -68,23 +66,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Create a Beautiful Soup object\n",
-    "html = browser.html\n",
-    "news_soup = soup(html, 'html.parser')\n"
+    "# Create a Beautiful Soup object\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Extract all the text elements\n",
-    "articles = news_soup.select('div.list_text')"
+    "# Extract all the text elements\n"
    ]
   },
   {
@@ -111,33 +106,28 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Create an empty list to store the dictionaries\n",
-    "news_data = []"
+    "# Create an empty list to store the dictionaries\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [],
    "source": [
     "# Loop through the text elements\n",
     "# Extract the title and preview text from the elements\n",
     "# Store each title and preview pair in a dictionary\n",
-    "# Add the dictionary to the list\n",
-    "for article in articles:\n",
-    "    title = article.find('div', class_='content_title').get_text()\n",
-    "    preview = article.find('div', class_='article_teaser_body').get_text()\n",
-    "    news_data.append({'title': title, 'preview': preview})"
+    "# Add the dictionary to the list\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
@@ -175,19 +165,18 @@
        "  'preview': '“Selfie” of the Curiosity rover with inset showing the SAM instrument prior to installation on the rover.'}]"
       ]
      },
-     "execution_count": 11,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "# Print the list to confirm success\n",
-    "news_data"
+    "# Print the list to confirm success\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [],
    "source": [
